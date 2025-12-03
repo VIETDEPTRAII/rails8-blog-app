@@ -17,4 +17,8 @@ Rails.application.routes.draw do
       get :latest_posts
     end
   end
+
+  get "about", to: "pages#about"
+  get "contact", to: "pages#contact"
+  get "code_of_conduct", to: "pages#code_of_conduct"
 end

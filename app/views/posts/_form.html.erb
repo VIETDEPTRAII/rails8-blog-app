@@ -1,7 +1,7 @@
 <div class="container">
-  <%= render 'shared/error_messages', object: @post %>
-  <h1 class="text-center mb-5">Create new post</h1>
-  <%= form_with model: @post, method: :post, local: true, data: { turbo: false } do |f| %>
+  <%= render 'shared/error_messages', object: object %>
+  <h1 class="text-center mb-5"><%= screen_name %></h1>
+  <%= form_with model: object, local: true do |f| %>
     <div class="mb-5">
       <%= f.text_field :title, class: "form-control", placeholder: 'New post title here...' %>
     </div>

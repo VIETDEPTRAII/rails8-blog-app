@@ -3,9 +3,13 @@
 class PostsController < ApplicationController
   layout 'blog'
 
+  before_action :find_post, only: %i[show edit update]
+
   def index
     @posts = Post.all
   end
+
+  def show; end
 
   def new
     @post = Post.new
@@ -17,7 +21,18 @@ class PostsController < ApplicationController
       flash[:success] = 'Post was successfully created.'
       redirect_to posts_path
     else
-      render :new
+      render :new, locals: { object: @post }
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @post.update(post_params)
+      flash[:success] = 'Post was successfully updated.'
+      redirect_to edit_post_path(@post)
+    else
+      render :edit
     end
   end
 
@@ -26,6 +41,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def find_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :content)
