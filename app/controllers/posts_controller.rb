@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: %i[show edit update]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.page(params[:page]).per(6)
   end
 
   def show; end
