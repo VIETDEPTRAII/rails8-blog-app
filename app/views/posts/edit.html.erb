@@ -1,0 +1,15 @@
+<div class="container">
+  <%= render 'shared/error_messages', object: @post %>
+  <h1 class="text-center mb-5">Edit post</h1>
+  <%= form_with model: @post, method: :put, local: true, data: { turbo: false } do |f| %>
+    <div class="mb-5">
+      <%= f.text_field :title, class: "form-control", placeholder: 'New post title here...' %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.rich_textarea :content, class: "form-control", placeholder: 'Write your post content here...' %>
+    </div>
+
+    <%= f.submit "Publish", class: "btn btn-primary mb-4" %>
+  <% end %>
+</div>

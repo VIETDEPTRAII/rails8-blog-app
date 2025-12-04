@@ -1,0 +1,8 @@
+<div class="container my-5">
+  <turbo-frame id="post_<%= @post.id %>">
+    <div class="card p-4">
+      <h1 class="display-4 fw-bold mb-4"><%= @post.title %></h1>
+      <div><%= @post.content %></div>
+    </div>
+  </turbo-frame>
+</div>

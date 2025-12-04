@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+html, body {
+  height: 100%;
+  margin: 0; /* đảm bảo không có khoảng trắng */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* đảm bảo body cao bằng viewport */
+}
+
+main {
+  flex: 1 0 auto; /* chiếm không gian còn lại */
+}
+
+.slide-out {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* .turbo-frame {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.3s ease;
+} */
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
